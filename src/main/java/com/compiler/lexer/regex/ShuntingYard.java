@@ -145,7 +145,7 @@ public class ShuntingYard {
                 }
                 if (!ops.isEmpty()) ops.pop(); // descartar '('
             } else { // operador
-                if (c == '*') {
+                if (c == '*' || c == '+' || c == '?') {
                     while (!ops.isEmpty() && precedence(ops.peek()) > precedence(c)) {
                         output.append(ops.pop());
                     }
