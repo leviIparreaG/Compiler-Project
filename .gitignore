@@ -13,3 +13,6 @@ Thumbs.db
 
 # Ignorar configuración local
 .env
+
+target/
+target/
