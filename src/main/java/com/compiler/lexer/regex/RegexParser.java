@@ -55,9 +55,11 @@ public class RegexParser {
     
         
         String postfix = ShuntingYard.toPostfix(infixRegex);
+        NFA nfa = buildNfaFromPostfix(postfix);
+        // Marcar el estado final como estado de aceptación
+        nfa.endState.isFinal = true;
+        return nfa;
 
-        return buildNfaFromPostfix(postfix);
-    //throw new UnsupportedOperationException("Not implemented");
     }
 
     /**
